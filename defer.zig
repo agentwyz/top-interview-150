@@ -11,7 +11,7 @@ pub fn main() !void
 
 fn test(a: u8) u8 {
     //不知道
-    
+    defer a + 2;
     defer a + 1;
     return a;
 }
