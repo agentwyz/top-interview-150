@@ -1,12 +1,4 @@
-
-/*
-下标+当前下标的元素
-2+0=2 3+1=4, 
-3+0=3 3+0 = 3
-
-*/
-
-
+/*这道题, 题目说最大可以到达, 只要k>=i就可以了*/
 class Solution {
     public boolean canJump(int[] nums) {
         int len = nums.length;
@@ -17,7 +9,7 @@ class Solution {
                 return false;
             }
             
-            //最大可以到达
+            //只要k>=i 当前位置都是可以到达
             k = Math.max(k, i+nums[i]);
         }
 
