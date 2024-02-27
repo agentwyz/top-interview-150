@@ -1,6 +1,7 @@
 class Solution {
     public int majorityElement(int[] nums) {
         Arrays.sort(nums);
+        
         int i = 0;
         int j = 0;
         
