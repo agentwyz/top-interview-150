@@ -2,18 +2,22 @@
 class Solution {
     public boolean canJump(int[] nums) {
         int len = nums.length;
-        int k = 0;
+        int maxReach = 0;
 
-        for ( int i = 0; i < len; i++) {
-            if (i > k) {
+        for ( int i = 0; i < len; i++ ) {
+            if ( i > maxReach ) {
                 return false;
             }
             
             //只要k>=i 当前位置都是可以到达
-            k = Math.max(k, i+nums[i]);
+            maxReach = Math.max(maxReach, i+nums[i]);
         }
 
-        return true;
 
+        if (maxReach >= nums.length - 1) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
