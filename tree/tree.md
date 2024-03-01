@@ -17,6 +17,38 @@ class Tree {
 
 按照遍历的方式分为两种, 
 1. 第一种是使用递归进行去按照顺序进行遍历
-2. 第二种方式是使用栈去遍历整个数。
+2. 第二种方式是使用栈去遍历整个数,
 
-关于递归的解法没有什么好说的, 我们直接来看迭代的写法
+首先是第一种使用深度优先遍历的算法
+```java
+if (root == null) return;
+
+//中间添加代码....
+
+dfs(root.left);
+dfs(root.right);
+```
+
+
+我们来简单介绍一下第二种方式的模版, 第二种方式就是使用stack去模拟这个完整的过程
+```java
+//首先创建一个栈, 保存遍历过程中的节点
+stack<TreeNode> stack = new Stack<TreeNode>();
+
+while (root != null || !stack.isEmpty()) {
+    while (root != null) {
+        stack.push(root);
+        root = root.left;
+    }
+
+    root = stack.pop();
+    root = root.right;
+}
+```
+
+有了这两个模版, 我们只需要在遍历的二叉树的过程中, 进行相关的操作就可以了
+
+下面这些题都是使用递归的模版, 
+1. 104-二叉树的最大深度: 对应的题解为a1
+2. 100-相同的树: 对应的题解为a2
+3. 226-反转二叉树
