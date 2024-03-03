@@ -48,6 +48,21 @@ while (root != null || !stack.isEmpty()) {
 ```
 
 
+第三个模版:
+```java
+while (!stack.isEmpty()) {
+    TreeNode current = stack.pop();
+    if (current.left != null) {
+        stack.push(current.left);
+    }
+
+    if (current.right != null) {
+        stack.push(current.right);
+    }
+}
+```
+
+
 有了这两个模版, 我们只需要在遍历的二叉树的过程中, 进行相关的操作就可以了
 
 下面这些题都是使用递归的模版, 
@@ -55,3 +70,8 @@ while (root != null || !stack.isEmpty()) {
 2. 100-相同的树: 对应的题解为a2
 3. 226-反转二叉树
 
+一种数学结论，考虑对升序数组 aaa 求任意两个元素之差的绝对值的最小值，答案一定为相邻两个元素之差的最小值
+即
+https://leetcode.cn/problems/minimum-absolute-difference-in-bst/solutions/443276/er-cha-sou-suo-shu-de-zui-xiao-jue-dui-chai-by-lee/?envType=study-plan-v2&envId=top-interview-150
+​
+中序遍历一点

@@ -30,10 +30,9 @@ class Solution {
             }
             
             //如果stack不为null
-            if (!stack.isEmpty()) {
-                root = stack.pop();
-                root = root.right;
-            }
+            root = stack.pop();
+            root = root.right;
+            
         }
         return n;
     }
