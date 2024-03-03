@@ -41,10 +41,12 @@ while (root != null || !stack.isEmpty()) {
         root = root.left;
     }
 
+    //
     root = stack.pop();
     root = root.right;
 }
 ```
+
 
 有了这两个模版, 我们只需要在遍历的二叉树的过程中, 进行相关的操作就可以了
 
@@ -52,3 +54,4 @@ while (root != null || !stack.isEmpty()) {
 1. 104-二叉树的最大深度: 对应的题解为a1
 2. 100-相同的树: 对应的题解为a2
 3. 226-反转二叉树
+

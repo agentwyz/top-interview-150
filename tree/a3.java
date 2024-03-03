@@ -13,3 +13,28 @@ class Solution {
         return root;
     }
 }
+
+class Solution {
+    public TreeNode invertTree(TreeNode n) {
+       Stack<TreeNode> stack = new Stack<>();
+        TreeNode root = n;
+        while (root != null || !stack.isEmpty()) {
+            while (root != null) {
+                stack.push(root);
+
+                TreeNode temp = root.left;
+                root.left = root.right;
+                root.right = temp;
+                
+                root = root.left;
+            }
+            
+            //如果stack不为null
+            if (!stack.isEmpty()) {
+                root = stack.pop();
+                root = root.right;
+            }
+        }
+        return n;
+    }
+}
