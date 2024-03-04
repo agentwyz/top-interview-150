@@ -31,7 +31,7 @@ public class Solution {
 
         while (slow!=quick) {
             
-            //快指针总是先到
+            
             if (quick == null || quick.next == null) {
                 return false;
             }
